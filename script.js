@@ -62,7 +62,7 @@ $("#citySearchBtn").on("click", function(event){
 
     cityname = $("#cityInput").val().trim();
     if(cityname === ""){
-        alert("Please enter a city to look up")
+        alert("City cannot be blank!")
 
     }else if (cityList.length >= 5){  
         cityList.shift();
