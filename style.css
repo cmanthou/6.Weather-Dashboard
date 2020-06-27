@@ -1,3 +1,10 @@
+/* body {
+    background-image: url("../6.Weather-Dashboard/Assets/Blurred-Background-Sunset-3c-Free.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+} */
+
 h1{
     margin-top: -2rem;
     font-family: 'Roboto Condensed', sans-serif;
@@ -7,16 +14,20 @@ h1{
 
 p, a{
     font-family: 'Roboto Condensed', sans-serif;
+    background: transparent;
+    border: none;
 }
 
 h3, h4, h5{
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 600;
+    background: transparent;
+    border: none;
 }
 
 .jumbotron{
-    background-color: black;
-    color: rgb(255, 255, 255);
+    background-color: #414447;
+    color: whitesmoke;
     height: 4rem;
     margin-bottom: 0px;
 }
@@ -25,35 +36,35 @@ h3, h4, h5{
     border-radius: 6px;
     background-color: green;
     padding: 5px;
-    color: white;
+    color: whitesmoke;
 }
 
 .moderate{
     border-radius: 6px;
     background-color: yellow;
     padding: 5px;
-    color: black;
+    color: #414447;
 }
 
 .high{
     border-radius: 6px;
     background-color: orange;
     padding: 5px;
-    color: black;
+    color: #414447;
 }
 
 .vhigh{
     border-radius: 6px;
     background-color: red;
     padding: 5px;
-    color: white;
+    color: whitesmoke;
 }
 
 .extreme{
     border-radius: 6px;
     background-color: violet;
     padding: 5px;
-    color: white;
+    color: whitesmoke;
 }
 
 .searchCol{
