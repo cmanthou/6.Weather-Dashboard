@@ -1,13 +1,13 @@
-// Global variable declarations
+// Global variables
 var cityList = [];
 var cityname;
 
-// local storage functions
+// Local storage functions
 initCityList();
 initWeather();
 
 
-// This function displays the city entered by the user into the DOM
+// Displays the city entered by the user into the DOM
 function renderCities(){
     $("#cityList").empty();
     $("#cityInput").val("");
@@ -21,7 +21,7 @@ function renderCities(){
     } 
 }
 
-// This function pulls the city list array from local storage
+// Pulls the city list array from local storage
 function initCityList() {
     var storedCities = JSON.parse(localStorage.getItem("cities"));
     
@@ -32,7 +32,7 @@ function initCityList() {
     renderCities();
     }
 
-// This function pull the current city into local storage to display the current weather forecast on reload
+// Pulls the current city into local storage to display the current weather forecast on reload
 function initWeather() {
     var storedWeather = JSON.parse(localStorage.getItem("currentCity"));
 
@@ -44,19 +44,19 @@ function initWeather() {
     }
 }
 
-// This function saves the city array to local storage
+// Saves the city array to local storage
 function storeCityArray() {
     localStorage.setItem("cities", JSON.stringify(cityList));
     }
 
-// This function saves the currently display city to local storage
+// Saves the currently displayed city to local storage
 function storeCurrentCity() {
 
     localStorage.setItem("currentCity", JSON.stringify(cityname));
 }
       
 
-// Click event handler for city search button
+// Click event for search button
 $("#citySearchBtn").on("click", function(event){
     event.preventDefault();
 
@@ -78,14 +78,14 @@ $("#citySearchBtn").on("click", function(event){
     displayFiveDayForecast();
 });
 
-// Event handler for if the user hits enter after entering the city search term
+// Event handler for entering the city name in the seatch field 
 $("#cityInput").keypress(function(e){
     if(e.which == 13){
         $("#citySearchBtn").click();
     }
 })
 
-// This function runs the Open Weather API AJAX call and displays the current city, weather, and 5 day forecast to the DOM
+// Open Weather API AJAX call and displays the current city, weather, and 5 day forecast to the DOM
 async function displayWeather() {
 
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&units=imperial&appid=4ba768620ca0d5bb027a16274e4f792d";
@@ -123,7 +123,7 @@ async function displayWeather() {
             method: "GET"
         })
 
-        // getting UV Index info and setting color class according to value
+        // UV Index info and colors by thresholds
         var getUVIndex = uvResponse.value;
         var uvNumber = $("<span>");
         if (getUVIndex > 0 && getUVIndex <= 2.99){
@@ -144,7 +144,7 @@ async function displayWeather() {
         $("#weatherContainer").html(currentWeatherDiv);
 }
 
-// This function runs the AJAX call for the 5 day forecast and displays them to the DOM
+// AJAX call for the 5 day forecast and displays to the DOM
 async function displayFiveDayForecast() {
 
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+cityname+"&units=imperial&appid=d3b85d453bf90d469c82e650a0a3da26";
@@ -184,7 +184,7 @@ async function displayFiveDayForecast() {
       $("#forecastContainer").html(forecastDiv);
     }
 
-// This function is used to pass the city in the history list to the displayWeather function
+// Passes the city in the history list
 function historyDisplayWeather(){
     cityname = $(this).attr("data-name");
     displayWeather();
