@@ -88,7 +88,7 @@ $("#cityInput").keypress(function(e){
 // This function runs the Open Weather API AJAX call and displays the current city, weather, and 5 day forecast to the DOM
 async function displayWeather() {
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&units=imperial&appid=d3b85d453bf90d469c82e650a0a3da26";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&units=imperial&appid=4ba768620ca0d5bb027a16274e4f792d";
 
     var response = await $.ajax({
         url: queryURL,
@@ -117,7 +117,7 @@ async function displayWeather() {
         var getLong = response.coord.lon;
         var getLat = response.coord.lat;
         
-        var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=d3b85d453bf90d469c82e650a0a3da26&lat="+getLat+"&lon="+getLong;
+        var uvURL = "https://api.openweathermap.org/data/2.5/uvi?appid=4ba768620ca0d5bb027a16274e4f792d&lat="+getLat+"&lon="+getLong;
         var uvResponse = await $.ajax({
             url: uvURL,
             method: "GET"
