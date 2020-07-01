@@ -11,5 +11,5 @@ Open Weather Map API KEY = 4ba768620ca0d5bb027a16274e4f792d
 NOTES:  I tried to add a 'clear city' button to remove the cities from local storage, but ran out of time to complete it.  I also tried to encorporate the background image I have utalized in all of my homeworks for continuety, but it did not look great in my page format, so I ended up not using it.
 
 Screenshot of site: 
-<img src = "assets/ScreenShotWeather.png"/>
+<img src = "Assets/ScreenShotWeather.png"/>
 
